@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<h1>About</h1>
+<p>The potential extinction of the great white shark poses a serious threat to ocean ecosystems. As apex predators, great whites help regulate the population of marine species, maintaining balance in the food chain. Without them, overpopulation of certain fish could lead to the collapse of key habitats like coral reefs and seagrass beds. Their disappearance would not only disrupt biodiversity but also signal deeper issues in ocean health caused by human activities such as overfishing and pollution.</p>
+<img src="{% static 'img/gw2.jpg' %}" 
+alt="Great White Shark"
+style="max-width: 100%; height: auto;
+border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+{% endblock content %}
