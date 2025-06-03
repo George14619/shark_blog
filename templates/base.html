@@ -20,7 +20,7 @@
   }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-ocean">
+<nav class="navbar navbar-expand-lg bg-secondary">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'home' %}">Save The Great White</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,11 +34,22 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'about' %}">About</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+        </li>
       </ul>
+        {% if user.is_authenticated %}
+        <form method="POST" action="{% url 'logout' %}">
+          {% csrf_token %}
+        <input type="submit" class="nav-link" value="Log out">
+        </form>
+        {% else %}
+          <a class="nav-link" href="{% url 'login' %}">Log In</a>
+        {% endif %} 
     </div>
   </div>
 </nav>
-    <div class="container">
+    <div class="container mt-4">
         {% block content %}{% endblock content %}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">   
