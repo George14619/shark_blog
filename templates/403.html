@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Forbidden (403){% endblock title %}
+{% block content %}
+<div style="text-align: center;">
+    <h1>Forbidden (403)</h1>
+    <p>You are not authorized to view this page.</p>
+    <img src="{% static 'img/teeth.jpg' %}" 
+    alt="Great White Shark Teeth"
+    style="width: 70%; max-width: 500px; height: auto;
+    border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+</div>
+{% endblock content %}
